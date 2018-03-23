@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#get_json').click(function () {
+                $.get('do_json',function (data) {
+{#                    alert(data.name)#}
+                    $('#box')
+                        .empty()
+                        .append('<li>'+ data.name +'</li>')
+                        .append('<li>'+ data.age +'</li>')
+                        .append('<li>'+ data.sex +'</li>')
+                        .append('<li>'+ data.salary +'</li>')
+                        .append('<li>'+ data.comment +'</li>')
+
+                })
+
+            })
+        })
+    </script>
+    <title>JsonResponse案例</title>
+</head>
+<body>
+
+<h3>JsonResponse案例</h3>
+
+<input type="button" value="获取服务端数据" id="get_json">
+<ul id="box">
+
+</ul>
+</body>
+</html>
